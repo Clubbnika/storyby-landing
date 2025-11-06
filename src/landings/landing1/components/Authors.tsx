@@ -3,7 +3,7 @@ import React from 'react';
 const Authors = () => {
   return (
     <>
-      <section className="py-20 bg-gradient-to-t from-black to-black/50">
+      <section className="py-20 bg-gradient-to-t from-black to-black/50 min-h-screen">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Authors
         </h2>
