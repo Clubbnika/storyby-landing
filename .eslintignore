@@ -1,0 +1,6 @@
+# .eslintignore
+node_modules
+dist
+build
+*.config.js
+*.config.ts

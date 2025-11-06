@@ -1,0 +1,6 @@
+# .husky/pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# npx lint-staged  # закоментуй
+echo "Husky: skipped lint-staged (too slow)"
