@@ -1,20 +1,39 @@
+// src/landings/landing1/Landing1.tsx
 import React from 'react';
+import Hero from './components/Hero';
+import Header from './components/Header';
+import About from './components/About';
+import Authors from './components/Authors';
+import Footer from './components/Footer';
 
 const Landing1: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full text-center">
-        <h1 className="text-2xl font-semibold mb-4">
-          Welcome to StorybyWriter
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Create, share, and earn from your stories!
-        </p>
-        <button className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
-          Get Started
-        </button>
+    <>
+      <Header />
+      <div className="relative min-h-screen">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: "url('/bg.webp')" }}
+        />
+        {/* <div className="absolute inset-0 bg-black/50" /> */}
+        <div className="relative z-10">
+          <section id="home">
+            <Hero />
+          </section>
+
+          <section id="about">
+            <About />
+          </section>
+
+          <section id="authors">
+            <Authors />
+          </section>
+        </div>
       </div>
-    </div>
+      <section id="contacts">
+        <Footer />
+      </section>
+    </>
   );
 };
 
