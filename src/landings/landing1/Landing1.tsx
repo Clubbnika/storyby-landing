@@ -1,10 +1,10 @@
-// src/landings/landing1/Landing1.tsx
 import React from 'react';
 import Hero from './components/Hero';
 import Header from './components/Header';
 import About from './components/About';
 import Authors from './components/Authors';
 import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
 
 const Landing1: React.FC = () => {
   return (
@@ -15,7 +15,6 @@ const Landing1: React.FC = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ backgroundImage: "url('/bg.webp')" }}
         />
-        {/* <div className="absolute inset-0 bg-black/50" /> */}
         <div className="relative z-10">
           <section id="home">
             <Hero />
@@ -30,7 +29,10 @@ const Landing1: React.FC = () => {
           </section>
         </div>
       </div>
-      <section id="contacts">
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+      <section>
         <Footer />
       </section>
     </>

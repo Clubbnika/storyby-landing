@@ -1,10 +1,11 @@
 import React from 'react';
+import ContactForm from './HeroContent';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen items-center justify-center p-4 flex flex-col gap-10">
+    <section className="min-h-screen items-center justify-center p-4 flex flex-col gap-7">
       <h1
-        className="text-4xl md:text-9xl lg:text-6xl font-bold text-white text-center leading-tight font-serif mt-10"
+        className="text-4xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-tight font-serif mt-10"
         style={{
           textShadow: `
             0 0 10px rgba(0,0,0,0.8),
@@ -17,6 +18,7 @@ const Hero = () => {
       >
         Welcome to StorybyWriter.
       </h1>
+      <ContactForm />
     </section>
   );
 };

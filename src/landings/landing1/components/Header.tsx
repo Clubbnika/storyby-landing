@@ -49,11 +49,11 @@ const Header = () => {
               Автори
             </a>
             <a
-              href="#contacts"
-              onClick={e => handleScroll(e, 'contacts')}
+              href="#testimonials"
+              onClick={e => handleScroll(e, 'testimonials')}
               className="text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
             >
-              Контакти
+              Testimonials
             </a>
           </div>
 

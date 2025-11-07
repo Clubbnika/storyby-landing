@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PenTool, DollarSign, BookOpen, Globe } from 'lucide-react';
@@ -41,7 +39,7 @@ const About = () => {
           Чому обирають StorybyWriter?
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -57,7 +55,7 @@ const About = () => {
                          rounded-lg shadow-sm"
             >
               <div className="mb-3 text-white">
-                <benefit.Icon size={50} strokeWidth={1.8} />
+                <benefit.Icon size={50} strokeWidth={1.5} />
               </div>
 
               <h3 className="text-lg font-semibold text-white mb-1 font-serif">

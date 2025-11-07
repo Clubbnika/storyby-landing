@@ -1,0 +1,78 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
+
+const Testimonials = () => {
+  const reviews = [
+    {
+      text: 'StorybyWriter допомогла мені знайти перших читачів. Завдяки відгукам я покращила свій роман і тепер він у топі!',
+      author: '— Анна К., автор фентезі',
+      rating: 5,
+    },
+    {
+      text: 'Проста платформа, чесні роялті та швидкі виплати. Нарешті я заробляю на своїх історіях.',
+      author: '— Максим Р., сценарист',
+      rating: 5,
+    },
+    {
+      text: 'Тут я отримав конструктивні поради від спільноти. Мій детектив став набагато сильнішим.',
+      author: '— Олена С., автор трилерів',
+      rating: 5,
+    },
+  ];
+
+  return (
+    <section className="pb-16 px-6 bg-black">
+      <div className="max-w-5xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold text-center text-white mb-12 font-serif"
+        >
+          Що кажуть автори
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.15,
+                ease: 'easeOut',
+              }}
+              className="flex flex-col bg-white/5 backdrop-blur-sm rounded-xl p-6 
+                         border border-white/10 shadow-lg"
+            >
+              <Quote className="w-8 h-8 text-white/30 mb-4" />
+
+              <p className="text-sm text-white/80 leading-relaxed flex-1 mb-4">
+                {review.text}
+              </p>
+
+              <div className="flex gap-1 mb-3">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-yellow-500 text-yellow-500"
+                  />
+                ))}
+              </div>
+
+              <p className="text-xs text-white/60 font-medium">
+                {review.author}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
