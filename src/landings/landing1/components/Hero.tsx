@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center p-4">
+    <section className="min-h-screen items-center justify-center p-4 flex flex-col gap-10">
       <h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center leading-tight font-serif"
+        className="text-4xl md:text-9xl lg:text-6xl font-bold text-white text-center leading-tight font-serif mt-10"
         style={{
           textShadow: `
             0 0 10px rgba(0,0,0,0.8),

@@ -1,46 +1,76 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import { PenTool, DollarSign, BookOpen, Globe } from 'lucide-react';
 
 const About = () => {
-  return (
-    <>
-      <section className="min-h-screen bg-black flex items-center justify-center px-4">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 max-w-5xl w-full">
-          <div className="max-w-md text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-              Платформа, де історії оживають
-            </h2>
-            <p className="text-lg text-white/70 leading-relaxed">
-              StorybyWriter is a powerful all-in-one publishing platform for
-              writers to create, share, and earn from their stories, whether
-              they be novels, scripts, or more. With more than{' '}
-              <strong className="text-white/70">28 000 authors</strong>,
-              StorybyWriter helps authors get initial audience, feedback, and
-              suggestions from readers all over the world.
-            </p>
-          </div>
+  const benefits = [
+    {
+      title: 'Повний творчий контроль',
+      text: 'На StorybyWriter ви зберігаєте повний контроль над своїми творами — визначаєте персонажів, сюжет і світ без обмежень чи редакційних вимог.',
+      Icon: PenTool,
+    },
+    {
+      title: 'Щедрі бонуси та роялті',
+      text: 'Автори отримують конкурентні роялті, бонуси та можливості для адаптацій книг, що дозволяє заробляти та розвивати свої твори.',
+      Icon: DollarSign,
+    },
+    {
+      title: 'Ресурси для розвитку',
+      text: 'Платформа надає освітні ресурси та корисні поради для вдосконалення навичок і професійного зростання.',
+      Icon: BookOpen,
+    },
+    {
+      title: 'Міжнародна аудиторія',
+      text: 'StorybyWriter дозволяє публікувати твори та отримувати відгуки від читачів з усього світу, привертаючи глобальну аудиторію.',
+      Icon: Globe,
+    },
+  ];
 
-          <div className="flex justify-center">
-            <div className="relative">
-              <div
-                className="bg-white p-3 pt-7 pb-16 shadow-2xl"
-                style={{
-                  width: '380px',
-                  maxWidth: '100%',
-                }}
-              >
-                <div className="relative -mt-4">
-                  <img
-                    src="/about-image.webp"
-                    alt="Письменники на StorybyWriter"
-                    className="w-full h-80 object-cover shadow-lg"
-                  />
-                </div>
+  return (
+    <section className="min-h-screen py-12 px-6 bg-black flex flex-col justify-center">
+      <div className="max-w-4xl mx-auto w-full">
+        <motion.h2
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-xl md:text-4xl font-bold text-center text-white mb-8 font-serif"
+        >
+          Чому обирають StorybyWriter?
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.12,
+                ease: 'easeOut',
+              }}
+              className="flex flex-col items-center text-center p-4 backdrop-blur-sm 
+                         rounded-lg shadow-sm"
+            >
+              <div className="mb-3 text-white">
+                <benefit.Icon size={50} strokeWidth={1.8} />
               </div>
-            </div>
-          </div>
+
+              <h3 className="text-lg font-semibold text-white mb-1 font-serif">
+                {benefit.title}
+              </h3>
+              <p className="text-xs text-white/60 leading-relaxed">
+                {benefit.text}
+              </p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
