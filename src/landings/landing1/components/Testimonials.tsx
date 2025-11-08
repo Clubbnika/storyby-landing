@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
 
 const Testimonials = () => {
@@ -21,14 +21,16 @@ const Testimonials = () => {
     },
   ];
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false, margin: '-100px' });
+
   return (
-    <section className="pb-16 px-6 bg-black">
+    <section ref={ref} className="pb-16 px-6 bg-black">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-2xl md:text-3xl font-bold text-center text-white mb-12 font-serif"
         >
           Що кажуть автори
@@ -39,8 +41,7 @@ const Testimonials = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
                 duration: 0.5,
                 delay: index * 0.15,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { PenTool, DollarSign, BookOpen, Globe } from 'lucide-react';
 
 const About = () => {
@@ -8,6 +8,11 @@ const About = () => {
       title: 'Повний творчий контроль',
       text: 'На StorybyWriter ви зберігаєте повний контроль над своїми творами — визначаєте персонажів, сюжет і світ без обмежень чи редакційних вимог.',
       Icon: PenTool,
+    },
+    {
+      title: 'Міжнародна аудиторія',
+      text: 'StorybyWriter дозволяє публікувати твори та отримувати відгуки від читачів з усього світу, привертаючи глобальну аудиторію.',
+      Icon: Globe,
     },
     {
       title: 'Щедрі бонуси та роялті',
@@ -19,22 +24,22 @@ const About = () => {
       text: 'Платформа надає освітні ресурси та корисні поради для вдосконалення навичок і професійного зростання.',
       Icon: BookOpen,
     },
-    {
-      title: 'Міжнародна аудиторія',
-      text: 'StorybyWriter дозволяє публікувати твори та отримувати відгуки від читачів з усього світу, привертаючи глобальну аудиторію.',
-      Icon: Globe,
-    },
   ];
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false, margin: '-150px' });
+
   return (
-    <section className="min-h-screen py-12 px-6 bg-black flex flex-col justify-center">
+    <section
+      ref={ref}
+      className="min-h-screen py-12 px-6 bg-black flex flex-col justify-center"
+    >
       <div className="max-w-4xl mx-auto w-full">
         <motion.h2
-          initial={{ opacity: 0, y: -15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-xl md:text-4xl font-bold text-center text-white mb-8 font-serif"
+          initial={{ opacity: 0, y: -30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-xl md:text-4xl font-bold text-center text-white mb-12 font-serif"
         >
           Чому обирають StorybyWriter?
         </motion.h2>
@@ -43,16 +48,14 @@ const About = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 60 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
               transition={{
-                duration: 0.6,
-                delay: index * 0.12,
-                ease: 'easeOut',
+                duration: 1,
+                delay: index * 0.4,
+                ease: [0.3, 0.5, 0.51, 0.1],
               }}
-              className="flex flex-col items-center text-center p-4 backdrop-blur-sm 
-                         rounded-lg shadow-sm"
+              className="flex flex-col items-center text-center p-4"
             >
               <div className="mb-3 text-white">
                 <benefit.Icon size={50} strokeWidth={1.5} />

@@ -1,10 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import ContactForm from './HeroContent';
 
 const Hero = () => {
   return (
     <section className="min-h-screen items-center justify-center p-4 flex flex-col gap-7">
-      <h1
+      <motion.h1
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+          ease: 'easeOut',
+          delay: 0.2,
+        }}
         className="text-4xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-tight font-serif mt-10"
         style={{
           textShadow: `
@@ -17,7 +25,8 @@ const Hero = () => {
         }}
       >
         Welcome to StorybyWriter.
-      </h1>
+      </motion.h1>
+
       <ContactForm />
     </section>
   );
