@@ -32,21 +32,21 @@ const Header = () => {
               onClick={e => handleScroll(e, 'home')}
               className="text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
             >
-              Головна
+              Home
             </a>
             <a
               href="#about"
               onClick={e => handleScroll(e, 'about')}
               className="text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
             >
-              Про нас
+              About us
             </a>
             <a
               href="#authors"
               onClick={e => handleScroll(e, 'authors')}
               className="text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
             >
-              Автори
+              Authors
             </a>
             <a
               href="#testimonials"

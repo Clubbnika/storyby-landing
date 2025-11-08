@@ -5,23 +5,23 @@ import { PenTool, DollarSign, BookOpen, Globe } from 'lucide-react';
 const About = () => {
   const benefits = [
     {
-      title: 'Повний творчий контроль',
-      text: 'На StorybyWriter ви зберігаєте повний контроль над своїми творами — визначаєте персонажів, сюжет і світ без обмежень чи редакційних вимог.',
+      title: 'Full Creative Control',
+      text: 'On StorybyWriter, you retain complete control over your works — defining characters, plot, and world without restrictions or editorial demands.',
       Icon: PenTool,
     },
     {
-      title: 'Міжнародна аудиторія',
-      text: 'StorybyWriter дозволяє публікувати твори та отримувати відгуки від читачів з усього світу, привертаючи глобальну аудиторію.',
+      title: 'Global Audience',
+      text: 'StorybyWriter lets you publish your works and receive feedback from readers worldwide, attracting a global audience.',
       Icon: Globe,
     },
     {
-      title: 'Щедрі бонуси та роялті',
-      text: 'Автори отримують конкурентні роялті, бонуси та можливості для адаптацій книг, що дозволяє заробляти та розвивати свої твори.',
+      title: 'Generous Bonuses & Royalties',
+      text: 'Authors receive competitive royalties, bonuses, and opportunities for book adaptations, helping you earn and grow your stories.',
       Icon: DollarSign,
     },
     {
-      title: 'Ресурси для розвитку',
-      text: 'Платформа надає освітні ресурси та корисні поради для вдосконалення навичок і професійного зростання.',
+      title: 'Resources for Growth',
+      text: 'The platform provides educational resources and helpful tips to improve your skills and advance professionally.',
       Icon: BookOpen,
     },
   ];
@@ -41,7 +41,7 @@ const About = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-xl md:text-4xl font-bold text-center text-white mb-12 font-serif"
         >
-          Чому обирають StorybyWriter?
+          Why Choose StorybyWriter?
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

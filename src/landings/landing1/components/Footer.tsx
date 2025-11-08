@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,39 +11,51 @@ const Footer = () => {
           © {currentYear} StorybyWriter. All rights reserved.
         </p>
 
-        <div className="flex justify-center gap-6 text-xs text-white/50 mb-5">
+        <div className="flex justify-center gap-6 text-xs text-white/50 mb-5 flex-wrap">
           <a href="#" className="hover:text-white/80 transition">
             Privacy Policy
           </a>
           <a href="#" className="hover:text-white/80 transition">
             Terms of Service
           </a>
-          <a href="#" className="hover:text-white/80 transition">
+          <a
+            href="tel:+380506258262"
+            className="hover:text-white/80 transition font-medium"
+            aria-label="Contact us by phone"
+          >
             Contact
           </a>
         </div>
 
         <div className="flex justify-center gap-5">
           <a
-            href="#"
-            aria-label="Facebook"
+            href="https://www.linkedin.com/in/veronika-okhten-a75098300/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="text-white/40 hover:text-white transition"
           >
-            <Facebook size={20} strokeWidth={1.5} />
+            <Linkedin size={20} strokeWidth={1.5} />
           </a>
+
           <a
-            href="#"
+            href="https://www.instagram.com/clubbnika/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="text-white/40 hover:text-white transition"
           >
             <Instagram size={20} strokeWidth={1.5} />
           </a>
+
           <a
-            href="#"
-            aria-label="YouTube"
+            href="https://github.com/Clubbnika"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
             className="text-white/40 hover:text-white transition"
           >
-            <Youtube size={20} strokeWidth={1.5} />
+            <Github size={20} strokeWidth={1.5} />
           </a>
         </div>
       </div>

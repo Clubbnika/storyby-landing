@@ -5,18 +5,18 @@ import { Quote, Star } from 'lucide-react';
 const Testimonials = () => {
   const reviews = [
     {
-      text: 'StorybyWriter допомогла мені знайти перших читачів. Завдяки відгукам я покращила свій роман і тепер він у топі!',
-      author: '— Анна К., автор фентезі',
+      text: 'StorybyWriter helped me find my first readers. Thanks to their feedback, I improved my novel — and now it’s in the top!',
+      author: '— Anna K., fantasy author',
       rating: 5,
     },
     {
-      text: 'Проста платформа, чесні роялті та швидкі виплати. Нарешті я заробляю на своїх історіях.',
-      author: '— Максим Р., сценарист',
+      text: 'Simple platform, honest royalties, and fast payouts. Finally, I’m earning from my stories.',
+      author: '— Max R., screenwriter',
       rating: 5,
     },
     {
-      text: 'Тут я отримав конструктивні поради від спільноти. Мій детектив став набагато сильнішим.',
-      author: '— Олена С., автор трилерів',
+      text: 'I received constructive advice from the community here. My detective novel became so much stronger.',
+      author: '— Olena S., thriller author',
       rating: 5,
     },
   ];
@@ -27,15 +27,17 @@ const Testimonials = () => {
   return (
     <section ref={ref} className="pb-16 px-6 bg-black">
       <div className="max-w-5xl mx-auto">
+        {/* Заголовок */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-2xl md:text-3xl font-bold text-center text-white mb-12 font-serif"
         >
-          Що кажуть автори
+          What Authors Say
         </motion.h2>
 
+        {/* Відгуки */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <motion.div
