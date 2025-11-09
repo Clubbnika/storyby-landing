@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ContactForm from './HeroContent';
+import HeroContent from './HeroContent';
 
 const Hero = () => {
   return (
@@ -27,7 +27,7 @@ const Hero = () => {
         Welcome to StorybyWriter.
       </motion.h1>
 
-      <ContactForm />
+      <HeroContent />
     </section>
   );
 };
